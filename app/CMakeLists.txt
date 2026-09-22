@@ -32,7 +32,7 @@ endif()
 
 
 # create the executable
-set(EXECUTABLE_NAME WeighBoxUpdater)
+set(EXECUTABLE_NAME OtaUpgrader)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/output)
 
 # execute file 

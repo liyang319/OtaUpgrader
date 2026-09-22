@@ -9,7 +9,7 @@
 // #define DEVICE_SN "4854604D7765A027"
 #define APP_NAME "WeighBox"
 #define CONFIG_NAME "sensor.ini"
-#define UPDATER_NAME "WeighBoxUpdater"
+#define UPDATER_NAME "OtaUpgrader"
 #define RESTORE_SCRIPT_NAME "restore.sh"
 #define UPDATE_REPLACE_SCRIPT_NAME "update_replace.sh"
 #define APP_BASE_PATH "/home/ubuntu/workdir/app/"

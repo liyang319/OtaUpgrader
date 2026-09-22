@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(KewellMidware VERSION 1.0.0)
+project(OtaUpgrader VERSION 1.0.0)
 
 set(ARM OFF) 
 set(LINUXBUILD OFF)
