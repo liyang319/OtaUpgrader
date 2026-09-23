@@ -523,3 +523,13 @@ bool Utility::writeMyConfig(std::string filePath, std::string key, std::string v
     outFile.close();
     return true; // 成功写入
 }
+
+string Utility::getDeviceSN()
+{
+    std::string deviceSN = ""; // removeTrailingNewline(getFileContent(DEFAULT_SN_FILE_PATH));
+    if (deviceSN.empty())
+    {
+        deviceSN = "none";
+    }
+    return deviceSN;
+}

@@ -1,11 +1,13 @@
 # include sub directories
 include_directories(${PROJECT_SOURCE_DIR}/include/base)
+include_directories(${PROJECT_SOURCE_DIR}/include/core)
 include_directories(${PROJECT_SOURCE_DIR}/include/config)
 include_directories(${PROJECT_SOURCE_DIR}/include/log)
 include_directories(${PROJECT_SOURCE_DIR}/include/network)
 include_directories(${PROJECT_SOURCE_DIR}/include/utility)
 include_directories(${PROJECT_SOURCE_DIR}/include/thirdparty)
 include_directories(${PROJECT_SOURCE_DIR}/include/thirdparty/rapidjson)
+include_directories(${PROJECT_SOURCE_DIR}/include/thirdparty/mosquitto)
 
 # add compile tree
 add_subdirectory(config)
@@ -25,9 +27,13 @@ file(GLOB_RECURSE ALL_SOURCE "*.cpp" "*.c")
 if(${ARM})
    link_directories(${PROJECT_SOURCE_DIR}/lib/arm/libcurl)
    link_directories(${PROJECT_SOURCE_DIR}/lib/arm/openssl)
-else()
+elseif(${APPLE})
    link_directories(${PROJECT_SOURCE_DIR}/lib/macos/libcurl)
    link_directories(${PROJECT_SOURCE_DIR}/lib/macos/openssl)
+   link_directories(${PROJECT_SOURCE_DIR}/lib/macos/mosquitto)
+else()
+   link_directories(${PROJECT_SOURCE_DIR}/lib/linux/libcurl)
+   link_directories(${PROJECT_SOURCE_DIR}/lib/linux/openssl)
 endif()
 
 
@@ -45,3 +51,4 @@ target_link_libraries(${EXECUTABLE_NAME} crypto)
 if(NOT APPLE)
     target_link_libraries(${EXECUTABLE_NAME} rt)
 endif()
+target_link_libraries(${EXECUTABLE_NAME} mosquitto)

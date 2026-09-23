@@ -28,6 +28,7 @@
 #include "MonitorThread.h"
 #include "DataDef.h"
 #include "OTAUtility.h"
+#include "MqttThread.h"
 
 // #define USE_OTA_CHECK
 

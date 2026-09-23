@@ -35,4 +35,14 @@
 #define MAX_LAUNCH_TRY_TIME 3
 #define DEFAULT_LOG_PATH "/home/ubuntu/workdir/app"
 
+#define MQTT_PUBLISH_TOPIC_INDEX_DATA 1
+#define MQTT_PUBLISH_TOPIC_INDEX_RESPONSE 2
+#define MQTT_PUBLISH_TOPIC_INDEX_OFFLINEDATA 3
+
+typedef struct _MqttPublishUnit
+{
+    int topicIndex;
+    std::string content;
+} MqttPublishUnit;
+
 #endif // DATADEF_H

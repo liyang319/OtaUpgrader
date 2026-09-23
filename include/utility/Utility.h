@@ -32,6 +32,7 @@ public:
     static bool removeFile(std::string &filePath);
     static bool readMyConfig(std::string filePath, std::string key, std::string &value);
     static bool writeMyConfig(std::string filePath, std::string key, std::string value);
+    static std::string getDeviceSN();
 };
 
 #endif // UTILITY_H
