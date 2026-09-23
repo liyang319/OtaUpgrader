@@ -526,7 +526,7 @@ bool Utility::writeMyConfig(std::string filePath, std::string key, std::string v
 
 string Utility::getDeviceSN()
 {
-    std::string deviceSN = ""; // removeTrailingNewline(getFileContent(DEFAULT_SN_FILE_PATH));
+    std::string deviceSN = "123"; // removeTrailingNewline(getFileContent(DEFAULT_SN_FILE_PATH));
     if (deviceSN.empty())
     {
         deviceSN = "none";

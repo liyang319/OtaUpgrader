@@ -287,19 +287,22 @@ int main()
 {
     COUT << "=========OTAUPDATER=============" << VERSION << endl;
     int index = 1;
-    MonitorThread monitorThread;
+    // MonitorThread monitorThread;
+    MqttThread mqttThread;
     // OtaCheck();
     // LogCheck();
-    std::this_thread::sleep_for(std::chrono::seconds(20));
-    std::thread manageLogThread = std::thread(ManageLogFunction);
-#ifdef USE_OTA_CHECK
-    std::thread otaCheckThread = std::thread(OTACheckFunction);
-#endif
-    monitorThread.start();
+    // std::this_thread::sleep_for(std::chrono::seconds(20));
+    // std::thread manageLogThread = std::thread(ManageLogFunction);
+    // #ifdef USE_OTA_CHECK
+    //     std::thread otaCheckThread = std::thread(OTACheckFunction);
+    // #endif
+    // monitorThread.start();
+    mqttThread.start();
 
-    manageLogThread.join();
-#ifdef USE_OTA_CHECK
-    otaCheckThread.join();
-#endif
-    monitorThread.join();
+    // manageLogThread.join();
+    // #ifdef USE_OTA_CHECK
+    //     otaCheckThread.join();
+    // #endif
+    //     monitorThread.join();
+    mqttThread.join();
 }

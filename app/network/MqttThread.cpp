@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "AppData.h"
 // #include "MqttReportThread.h"
-// #include "DeviceConfig.h"
+#include "DeviceConfig.h"
 #include "Utility.h"
 // #include "GlobalFlag.h"
 // #include "WeighData.h"
@@ -31,10 +31,10 @@ MqttThread::MqttThread()
 
 void MqttThread::init()
 {
-    mqttHost = "";     // DeviceConfig::getInstance().get_value("dtu", "mqtthost");
-    mqttPort = "";     // DeviceConfig::getInstance().get_value("dtu", "mqttport");
-    mqttUsername = ""; // DeviceConfig::getInstance().get_value("dtu", "mqttusername");
-    mqttPassword = ""; // DeviceConfig::getInstance().get_value("dtu", "mqttpassword");
+    mqttHost = DeviceConfig::getInstance().get_value("dtu", "mqtthost");
+    mqttPort = DeviceConfig::getInstance().get_value("dtu", "mqttport");
+    mqttUsername = DeviceConfig::getInstance().get_value("dtu", "mqttusername");
+    mqttPassword = DeviceConfig::getInstance().get_value("dtu", "mqttpassword");
     mqttClinetID = "MDTU_" + Utility::getDeviceSN();
     mqttPublishDataTopic = "DEVICE/DATA/DTU/" + Utility::getDeviceSN();
     mqttPublishResponseTopic = "DEVICE/RESPONSE/DTU/" + Utility::getDeviceSN();
