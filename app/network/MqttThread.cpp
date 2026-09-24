@@ -121,7 +121,7 @@ void MqttThread::message_callback(struct mosquitto *mosq, void *userdata, const 
     {
         string recvData = (char *)message->payload;
         std::cout << "收到消息: " << recvData << std::endl;
-        // AppData::getInstance().addDataToDataRecvQueue(recvData);
+        AppData::getInstance().addDataToDataRecvQueue(recvData);
     }
     else
     {

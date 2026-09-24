@@ -39,6 +39,9 @@
 #define MQTT_PUBLISH_TOPIC_INDEX_RESPONSE 2
 #define MQTT_PUBLISH_TOPIC_INDEX_OFFLINEDATA 3
 
+#define MSG_CMD_OTA "OTA"
+#define MSG_CMD_RESTART "RESTART"
+
 typedef struct _MqttPublishUnit
 {
     int topicIndex;

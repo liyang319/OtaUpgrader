@@ -29,6 +29,7 @@
 #include "DataDef.h"
 #include "OTAUtility.h"
 #include "MqttThread.h"
+#include "MsgWorkerThread.h"
 
 // #define USE_OTA_CHECK
 
@@ -288,6 +289,7 @@ int main()
     COUT << "=========OTAUPDATER=============" << VERSION << endl;
     int index = 1;
     // MonitorThread monitorThread;
+    MsgWorkerThread msgWorkerThread;
     MqttThread mqttThread;
     // OtaCheck();
     // LogCheck();
