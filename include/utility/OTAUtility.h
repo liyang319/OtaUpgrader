@@ -2,6 +2,7 @@
 #define OTAUTILITY_H
 
 #include <string>
+#include "rapidjson/document.h"
 
 class OTAUtility
 {
