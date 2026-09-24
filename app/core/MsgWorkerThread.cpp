@@ -84,15 +84,10 @@ void MsgWorkerThread::threadFunction()
             // 解析Mqtt进来的消息
             string recvMsg = AppData::getInstance().getDataFromDataRecvQueue();
             COUT << "[MSG:]" << recvMsg << endl;
-            std::vector<std::string> cmdList = splitJsonCmd(recvMsg);
-            COUT << "------cmdList----size-" << cmdList.size() << endl;
 
-            for (std::string &cmd : cmdList)
-            {
-                MsgDispatcher patcher(cmd);
-                patcher.dispatchMsg();
-                sleep(1);
-            }
+            MsgDispatcher patcher(recvMsg);
+            patcher.dispatchMsg();
+            sleep(1);
         }
         usleep(10000);
         // sleep(1);

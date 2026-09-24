@@ -300,6 +300,7 @@ int main()
     // #endif
     // monitorThread.start();
     mqttThread.start();
+    msgWorkerThread.start();
 
     // manageLogThread.join();
     // #ifdef USE_OTA_CHECK
@@ -307,4 +308,5 @@ int main()
     // #endif
     //     monitorThread.join();
     mqttThread.join();
+    msgWorkerThread.join();
 }
